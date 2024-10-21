@@ -3,8 +3,6 @@
 ## description
 The purpose of this repository is to serve as a record of my development environment, i.e. programs I use for development alongside their configurations. This will allow me to move between my various computers, while maintaining a relatively consistent workflow. The main piece of software which makes this possible is GNU Stow, which allows me to symlink the dotfiles in this repository to the their corresponding counterparts in my home directory.
 
-
-
 ## System Settings
 ### American Keyboard Layout
 For the purpose of programming, having the hash symbol # be displaced by the pound sign £ is inconvenient. I find the american layout much easier for the purpose of typing commonly encountered symbols when programming.
@@ -13,7 +11,12 @@ For the purpose of programming, having the hash symbol # be displaced by the pou
 When using proper typing technique, the CAPS-LOCK key is a redundant key. Which is a shame since by default it takes a position in the keyboard which is very accessible, i.e. close to the home row. For this reason I recomend rebinding it to a more useful and frequently used key. For me, escape is the best candidate for this remapping, since this is a key I frequently use when performing vim motions.
 
 ## Software Config
-clone this repository into your home directory. Then install GNU stow and use it to create a symlink between the dotfiles in this repository and their counterparts in your homedirectory.
+clone this repository into your home directory. Then install GNU stow and use it to create a symlink between the dotfiles in this repository and their counterparts in your homedirectory. This can be achieved by changing into the dotfiles directory and running stow on the directory:
+```
+cd dotfiles
+stow .
+```
+If this has been sucesful then you will be able to run `ls -lah` on your home directory and there should be symlinks (indicated with ->) in your home directory pointing at the config dotiles in the dotfiles directory. 
 
 ## Software
 The following software are roughly listed in the order in which they should be installed. 
@@ -28,6 +31,10 @@ sudo apt install zsh
 chsh -s $(which zsh)
 ```
 Then restart your system. After which, if you do not already have a `zshrc` dotfile in your homedirectory, you will be prompted to configure one.
+
+### Basic Terminal Utilities
+* neofetch - retrieves system information.
+* tree - visdualisation of a directory.
 
 ### Version Control
 I use git for version control.
