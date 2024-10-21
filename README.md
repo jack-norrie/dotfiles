@@ -21,6 +21,12 @@ If this has been sucesful then you will be able to run `ls -lah` on your home di
 
 Finally, if there are any files you do not want to be symlinked to your home directory you should specify them in a `.stow-local-ignore` file. There are some sensible file types, like `.git` in here by default.
 
+The preeding has downloaded all the software config files from this repo and added links in your system home directory to them. However, what if you want to make changes to your config or add new software config files. In order to do this you should make your changes within this repo, such that they can be version controlled and shared. Then once you are done, you should run:
+```
+stow --adopt .
+```
+The adopt flag will overwrite any existing files that might already exist in your home directory with a symlink to their counterpart in the dotfiles repo.
+
 ## Software
 The following software are roughly listed in the order in which they should be installed. 
 
