@@ -16,7 +16,10 @@ clone this repository into your home directory. Then install GNU stow and use it
 cd dotfiles
 stow .
 ```
+
 If this has been sucesful then you will be able to run `ls -lah` on your home directory and there should be symlinks (indicated with ->) in your home directory pointing at the config dotiles in the dotfiles directory. 
+
+Finally, if there are any files you do not want to be symlinked to your home directory you should specify them in a `.stow-local-ignore` file. There are some sensible file types, like `.git` in here by default.
 
 ## Software
 The following software are roughly listed in the order in which they should be installed. 
