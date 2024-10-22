@@ -48,6 +48,7 @@ If you have already stowed this repo into your home directory then you will have
 ### Basic Terminal Utilities
 * neofetch - retrieves system information.
 * tree - visualisation of a directory.
+* fzf - fuzzy finding - use the github insall for newest version.
 
 ### Version Control - Git
 I use git for version control. With git installed you can clone this repository and follow the steps in the previous main heading regarding getting software configs.

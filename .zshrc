@@ -80,5 +80,6 @@ alias vim='nvim'
 alias c='clear'
 
 # Shell integrations
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)" 
-alias ls="eza --icons=always"
+
