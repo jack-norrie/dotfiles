@@ -11,6 +11,7 @@ For the purpose of programming, having the hash symbol # be displaced by the pou
 When using proper typing technique, the CAPS-LOCK key is a redundant key. Which is a shame since by default it takes a position in the keyboard which is very accessible, i.e. close to the home row. For this reason I recomend rebinding it to a more useful and frequently used key. For me, escape is the best candidate for this remapping, since this is a key I frequently use when performing vim motions.
 
 ## Software Config
+### Using GNU Stow to Setup Symlinks 
 clone this repository into your home directory. Then install GNU stow and use it to create a symlink between the dotfiles in this repository and their counterparts in your homedirectory. This can be achieved by changing into the dotfiles directory and running stow on the directory:
 ```
 cd dotfiles
@@ -19,9 +20,10 @@ stow .
 
 If this has been sucesful then you will be able to run `ls -lah` on your home directory and there should be symlinks (indicated with ->) in your home directory pointing at the config dotiles in the dotfiles directory. 
 
-Finally, if there are any files you do not want to be symlinked to your home directory you should specify them in a `.stow-local-ignore` file. There are some sensible file types, like `.git` in here by default.
+Finally, if there are any files you do not want to be symlinked to your home directory you should specify them in a `.stow-local-ignore` file. There are some sensible file types, like `.git` and `README.md`, that are exluded by deafault. However, if you make your own ignore file you will have to add these back in. 
 
-The preeding has downloaded all the software config files from this repo and added links in your system home directory to them. However, what if you want to make changes to your config or add new software config files. In order to do this you should make your changes within this repo, such that they can be version controlled and shared. Then once you are done, you should run:
+### Adding New Confgis 
+The preeding has downloaded all the software config files from this repo and added links in your system home directory to them. However, what if you want to add a config you have been using locally into the repo. In this case if we copy the file into our dotfiles repo and try to run `stow .` we will get an error. This is because a file already exists in the location where a symlink is trying to be established. This can be fixed by either removing this file or adding the following flag to the stow command. 
 ```
 stow --adopt .
 ```
@@ -31,7 +33,7 @@ The adopt flag will overwrite any existing files that might already exist in you
 The following software are roughly listed in the order in which they should be installed. 
 
 ### Terminal Emulator
-I use wezterm as my terminal eumlator. It uses true colour and by default comes with a nerd-font installed, meaning that it can immediately benefit from terminal cosmetic upgrades. Furthermore it has good compatability across different operating system and is configured with lua, meaning it is easily extendable.
+I use wezterm as my terminal eumlator. It uses true colour and by default comes with a nerd-font installed, meaning that it can immediately benefit from terminal cosmetic upgrades. Furthermore, it has good compatability across different operating system and is configured with lua, meaning it is easily extendable.
 
 ### Shell
 This environemnt is setup with a `zsh` shell in mind. You can check if this is your default shell using `echo $SHELL`. If this is not the default shell of your operating system use the following commands:
@@ -43,7 +45,7 @@ Then restart your system. After which, if you do not already have a `zshrc` dotf
 
 ### Basic Terminal Utilities
 * neofetch - retrieves system information.
-* tree - visdualisation of a directory.
+* tree - visualisation of a directory.
 
 ### Version Control
 I use git for version control.
