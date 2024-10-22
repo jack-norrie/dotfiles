@@ -32,6 +32,13 @@ The adopt flag will overwrite any existing files that might already exist in you
 ## Software
 The following software are roughly listed in the order in which they should be installed. 
 
+### Version Control - Git
+Git is one of the first things you should install given that it is a dependancy for many of the software packages that follow.
+
+With Git installed you will be able to clone this repository into your home directory and follow the steps in the software config section to stow your config files in your home directory.
+
+Another piece of software that I like to use is lazygit. This is a higher level wrapper that sits on top of git. It provides a really nice interface which has good integration with neovim.
+
 ### Terminal Emulator - WezTerm
 I use wezterm as my terminal eumlator. It uses true colour and by default comes with a nerd-font installed and used by default (jetbrains-mono), meaning that it can immediately benefit from terminal cosmetic upgrades. Furthermore, it has good compatability across different operating system and is configured with lua, meaning it is easily extendable.
 
@@ -49,10 +56,6 @@ If you have already stowed this repo into your home directory then you will have
 * neofetch - retrieves system information.
 * tree - visualisation of a directory.
 * fzf - fuzzy finding - use the github insall for newest version.
-
-### Version Control - Git
-I use git for version control. With git installed you can clone this repository and follow the steps in the previous main heading regarding getting software configs.
-
 
 ### Text Editor - Neovim (LazyVim)
 My choice of text editor is neovim. I currently use the LazyVim distribution, rather than configuring the whole thing from scratch. Fortunately, if you have have been following along so far you will have all the pre-requisites to run this distro, i.e. a true colour terminal and nerd font. Don't worry about going to the LazyVim site, the config file contined in this repostiroy points to this distro and all the relevant files will be downloaded. Simply use a pakcage manager to download neovim, the lazyvim package manager will handle the rest when you fisrt launch neovim.
