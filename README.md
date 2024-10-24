@@ -60,8 +60,8 @@ If you have already stowed this repo into your home directory then you will have
 ### Text Editor - Neovim (LazyVim)
 My choice of text editor is neovim. I currently use the LazyVim distribution, rather than configuring the whole thing from scratch. Fortunately, if you have have been following along so far you will have all the pre-requisites to run this distro, i.e. a true colour terminal and nerd font. Don't worry about going to the LazyVim site, the config file contined in this repostiroy points to this distro and all the relevant files will be downloaded. Simply use a pakcage manager to download neovim, the lazyvim package manager will handle the rest when you fisrt launch neovim.
 
-### Terminal Multiplexer
-Despite wezterm having a built in terminal multiplexer, I use tmux since this has a rich plugin ecosystem and is a standard tool. However, in order to take advantage of the plug-in ecosystem you will need to first install the tmux plugin manager (TPM) from GitHub.
+### Terminal Multiplexer - TMUX
+Despite wezterm having a built in terminal multiplexer, I use tmux since this has a rich plugin ecosystem and is a standard tool. However, in order to take advantage of the plug-in ecosystem you will need to first install the tmux plugin manager (TPM) from GitHub. Then you will have to source the `.tmux.conf` file that should be in your home directory. Finally, you should enter TMUX and enter `prefix+I` to install the plugins using TPM.
 
 ### Tiling Window Manager
 [placeholder]
