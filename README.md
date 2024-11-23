@@ -111,7 +111,7 @@ gpg --output public.pgp --armor --export jacknorrie6785@gmail.com
 gpg --output private.pgp --armor --export-secret-key jacknorrie6785@gmail.com
 ```
 
-this will output the files `public.pgp` and `private.pgp` into your current working directory. You can now transfer these over to your new machine and use the following command to load them into that machines `gpg`.
+this will output the files `public.pgp` and `private.pgp` into your current working directory. You can now transfer these over to your new machine and use the following command to load them into that machine's `gpg`.
 
 ```
 gpg --import private.pgp
@@ -131,12 +131,10 @@ Then type `trust` followed by `5`.
 Despite WezTerm having a built-in terminal multiplexer, I use tmux since this has a rich plugin ecosystem and is a standard tool. However, in order to take advantage of the plugin ecosystem, you will need to first install the tmux plugin manager (TPM) from GitHub. Then you will have to source the `.tmux.conf` file that should be in your home directory. Finally, you should enter tmux and enter `prefix+I` to install the plugins using TPM.
 
 ### Tiling Window Manager
-
-[placeholder]
+[Placeholder]
 
 ### Browser
-
-I like to use LibreWolf, which is a privacy-first fork of firefox that for the most part removes the need to "harden" your Firefox. The only modifications I make to this browser is the addition of the `vimium` and `passff` plugins.
+I have moved away from Chromium based browsers due to manifest v3, my browser of choice is Firefox.
 
 ## Further-Work
 
