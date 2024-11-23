@@ -6,7 +6,7 @@ The purpose of this repository is to serve as a record of my development environ
 
 ## Operating System
 
-I mainly program applications in machine learning, and as such, I need an operating system and development environment with good support for Nvidia GPUs. Furthermore, I make use of a lot of FOSS and therefore prefer a UNIX-based OS. Hence, the most suitable OS for me is Linux when using a GPU and potentially macOS otherwise. My go-to Linux OS is Pop!_OS due to its out-of-the-box Nvidia driver support. However, this being an Ubuntu-based distro means the package-managed software is often out of date. For this reason, it is highly recommended to install the following packages so that you can build some packages from source, although beware that when doing this, you are trading cutting-edge features for system stability in some cases:
+I mainly program machine learning applications, and as such, I need an operating system and development environment with good support for Nvidia GPUs. Furthermore, I make use of a lot of FOSS and therefore prefer a UNIX-based OS. Hence, the most suitable OS for me is Linux when using a GPU and potentially macOS otherwise. My go-to Linux OS is Pop!_OS due to its out-of-the-box Nvidia driver support. However, this being an Ubuntu-based distro means the package-managed software is often out of date. For this reason, it is highly recommended to install the following packages so that you can build some packages from source:
 
 ```
 sudo apt-get install ninja-build gettext cmake unzip curl build-essential
@@ -47,7 +47,7 @@ If this has been successful, then you will be able to run `ls -lah` on your home
 
 Finally, if there are any files you do not want to be symlinked to your home directory, you should specify them in a `.stow-local-ignore` file. There are some sensible file types, like `.git` and `README.md`, that are excluded by default. However, if you make your own ignore file, you will have to add these back in.
 
-### Adding New Confgis
+### Adding New Configs
 
 The preceding steps have downloaded all the software config files from this repo and added links in your system home directory to them. However, what if you want to add a config you have been using locally into the repo? In this case, if we copy the file into our dotfiles repo and try to run `stow .`, we will get an error. This is because a file already exists in the location where a symlink is trying to be established. This can be fixed by either removing this file or adding the following flag to the stow command.
 
@@ -63,7 +63,7 @@ The following software are roughly listed in the order in which they should be i
 
 ### Version Control - Git
 
-Git is one of the first things you should install given that it is a dependency for many of the software packages that follow.
+Git is one of the first things you should install, given that it is a dependency for many of the software packages that follow.
 
 With Git installed you will be able to clone this repository into your home directory and follow the steps in the software config section to stow your config files in your home directory.
 
@@ -82,7 +82,7 @@ sudo apt install zsh
 chsh -s $(which zsh)
 ```
 
-Then restart your system. After which, if you do not already have a `zshrc` dotfile in your homedirectory, you will be prompted to configure one.
+Then restart your system. After which, if you do not already have a `zshrc` dotfile in your home directory, you will be prompted to configure one.
 
 If you have already stowed this repo into your home directory then you will have a `.zshrc` config file in your homedirectory. Your zsh shell should now be using a powerlevel10k configured prompt.
 
