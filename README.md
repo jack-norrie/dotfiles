@@ -94,7 +94,7 @@ If you have already stowed this repo into your home directory then you will have
 
 ### Text Editor - Neovim (LazyVim) (build from source recommended)
 
-My choice of text editor is Neovim. I currently use the LazyVim distribution, rather than configuring the whole thing from scratch. Fortunately, if you have been following along so far, you will have all the prerequisites to run this distro, i.e., a true color terminal and nerd font. Don't worry about going to the LazyVim site, the config file contained in this repository points to this distro and all the relevant files will be downloaded. Simply use a package manager to download Neovim, the LazyVim package manager will handle the rest when you first launch Neovim.
+My choice of text editor is Neovim. I currently use the LazyVim distribution, rather than configuring the whole thing from scratch. Fortunately, if you have been following along so far, you will have all the prerequisites to run this distro, i.e., a true color terminal and nerd font. Don't worry about going to the LazyVim site, the config file contained in this repository points to this distro and all the relevant files will be downloaded. All that remains to be done is to install neovim, which can either be done via a package manager or by building neovim from source. I would recommend the later, since package manager's neovim version is often out of date relative to the dependencies required for many of the Neovim plugins I use. With an install of neovim, the LazyVim package manager should then handle the rest in terms of installing plugins. However, it should be noted that some plugins will require `npm` as a dependency.
 
 ### Password Manager
 
