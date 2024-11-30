@@ -32,6 +32,12 @@ When using a laptop, I often plug it into a monitor and use this monitor as a si
 sudo cp ~/.config/monitors.xml ~gdm/.config/
 ```
 
+### Work Space Shortcuts
+I like to set shortcuts to move between my various workspaces. This functionality becomes redundant when using a tiling window manager, however sometimes you end up in a more vanilla desktop environment, and it can be useful to have this functionality. Use the following command on a Linux OS to add `<Control> + x` shortcuts to move to workspace `x`.
+```
+for i in {1..9}; do gsettings set "org.gnome.desktop.wm.keybindings" "switch-to-workspace-$i" "['<Control>$i']" ; done
+```
+
 ## Software Configuration
 
 ### Using GNU Stow to Setup Symlinks
@@ -75,7 +81,7 @@ I use WezTerm as my terminal emulator. It uses true color and by default comes w
 
 ### Shell - Zsh
 
-This environemnt is setup with a `zsh` shell in mind. You can check if this is your default shell using `echo $SHELL`. If this is not the default shell of your operating system use the following commands:
+This environment is setup with a `zsh` shell in mind. You can check if this is your default shell using `echo $SHELL`. If this is not the default shell of your operating system use the following commands:
 
 ```
 sudo apt install zsh
@@ -84,7 +90,7 @@ chsh -s $(which zsh)
 
 Then restart your system. After which, if you do not already have a `zshrc` dotfile in your home directory, you will be prompted to configure one.
 
-If you have already stowed this repo into your home directory then you will have a `.zshrc` config file in your homedirectory. Your zsh shell should now be using a powerlevel10k configured prompt.
+If you have already stowed this repo into your home directory then you will have a `.zshrc` config file in your home directory. Your zsh shell should now be using a powerlevel10k configured prompt.
 
 ### Basic Terminal Utilities
 
