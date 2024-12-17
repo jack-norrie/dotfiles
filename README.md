@@ -5,7 +5,6 @@
 The purpose of this repository is to serve as a record of my development environment, i.e., programs I use for development alongside their configurations. This will allow me to move between various machines while maintaining a relatively consistent workflow. The main piece of software which makes this possible is GNU Stow, which allows me to symlink the dotfiles in this repository to their corresponding counterparts in my home directory.
 
 ## Operating System
-
 I mainly program machine learning applications, and as such, I need an operating system and development environment with good support for Nvidia GPUs. Furthermore, I make use of a lot of FOSS and therefore prefer a UNIX-based OS. Hence, the most suitable OS for me is Linux when using a GPU and potentially macOS otherwise. My go-to Linux OS is Pop!_OS due to its out-of-the-box Nvidia driver support. However, this being an Ubuntu-based distro means the package-managed software is often out of date. For this reason, it is highly recommended to install the following packages so that you can build some packages from source:
 
 ```
@@ -13,6 +12,19 @@ sudo apt-get install ninja-build gettext cmake unzip curl build-essential
 ```
 
 Conversely, the macOS package manager Homebrew typically has relatively up-to-date software, and as such, the above should not be necessary. Furthermore, there exist more bleeding-edge Linux distributions like Arch-based distros which have more up-to-date packages. However, building a handful of packages from source is not laborious enough for me to take on the increased instability risks when using such a distro. I might consider it when Wayland gets better Nvidia support, as this would allow me to try out Hyprland, which is a good-looking tiling window manager that works particularly well on Arch-based distros.
+
+Finally, it is occasionally the case that I have to work on a windows machine. In such circumstances I would typically recommended setting up a Linux virtual machine using VirtualBox. If you do go down this route, then it is recommended to navigate to the virtual box UI while in your virtual machine and mount the "VirtualBox Guest Additions". This will allows your virtual machine to more seamlessly interface with the host OS. However, even with these "additions" installed, I have historically had issues using 4k displays when running such virtual machines. A common fix is to increase the virtual machine's VRAM to the max, and to use the following command to get a display profile for your desired resolution, for example:
+```
+sudo cvt 3840 2160
+
+```
+This will output a string that defines a resolution profile. Now type, `xrandr` to find the name of your display, likely something like `Virtual1`. Then simply create a file `.xprofile` in your home directory and add this display profile for your display of choice. For example:
+```
+#!/bin/sh
+xrandr --newmode "3840x2160_60.00" 712.75 3840 4160 4576 5312 2160 2163 2168 2237 -hsync +vsync
+xrandr --addmode Virtual1 "3840x2160_60.00"
+```
+```
 
 ## System Settings
 
