@@ -16,14 +16,12 @@ Conversely, the macOS package manager Homebrew typically has relatively up-to-da
 Finally, it is occasionally the case that I have to work on a windows machine. In such circumstances I would typically recommended setting up a Linux virtual machine using VirtualBox. If you do go down this route, then it is recommended to navigate to the virtual box UI while in your virtual machine and mount the "VirtualBox Guest Additions". This will allows your virtual machine to more seamlessly interface with the host OS. However, even with these "additions" installed, I have historically had issues using 4k displays when running such virtual machines. A common fix is to increase the virtual machine's VRAM to the max, and to use the following command to get a display profile for your desired resolution, for example:
 ```
 sudo cvt 3840 2160
-
 ```
 This will output a string that defines a resolution profile. Now type, `xrandr` to find the name of your display, likely something like `Virtual1`. Then simply create a file `.xprofile` in your home directory and add this display profile for your display of choice. For example:
 ```
 #!/bin/sh
 xrandr --newmode "3840x2160_60.00" 712.75 3840 4160 4576 5312 2160 2163 2168 2237 -hsync +vsync
 xrandr --addmode Virtual1 "3840x2160_60.00"
-```
 ```
 
 ## System Settings
