@@ -5,15 +5,22 @@
 The purpose of this repository is to serve as a record of my development environment, i.e., programs I use for development alongside their configurations. This will allow me to move between various machines while maintaining a relatively consistent workflow. The main piece of software which makes this possible is GNU Stow, which allows me to symlink the dotfiles in this repository to their corresponding counterparts in my home directory.
 
 ## Operating System
-I mainly program machine learning applications, and as such, I need an operating system and development environment with good support for Nvidia GPUs. Furthermore, I make use of a lot of FOSS and therefore prefer a UNIX-based OS. Hence, the most suitable OS for me is Linux when using a GPU and potentially macOS otherwise. My go-to Linux OS is Pop!_OS due to its out-of-the-box Nvidia driver support. However, this being an Ubuntu-based distro means the package-managed software is often out of date. For this reason, it is highly recommended to install the following packages so that you can build some packages from source:
+I mainly program machine learning applications, and as such, I need an operating system and development environment with good support for Nvidia GPUs. Furthermore, I make use of a lot of FOSS and therefore prefer a UNIX-based OS. Nonetheless, I am not always in full control of the operating system I am using, so below are some tips for the 3 main types of operating system.
+
+### Linux
+My go-to Linux OS is Pop!_OS due to its out-of-the-box Nvidia driver support. However, this being an Ubuntu-based distro means the package-managed software is often out of date. For this reason, it is highly recommended to install the following packages so that you can build some packages from source:
 
 ```
 sudo apt-get install ninja-build gettext cmake unzip curl build-essential
 ```
 
-Conversely, the macOS package manager Homebrew typically has relatively up-to-date software, and as such, the above should not be necessary. Furthermore, there exist more bleeding-edge Linux distributions like Arch-based distros which have more up-to-date packages. However, building a handful of packages from source is not laborious enough for me to take on the increased instability risks when using such a distro. I might consider it when Wayland gets better Nvidia support, as this would allow me to try out Hyprland, which is a good-looking tiling window manager that works particularly well on Arch-based distros.
+I am aware that there exist more bleeding-edge Linux distributions like Arch-based distros which have more up-to-date packages. However, building a handful of packages from source is not laborious enough for me to take on the increased instability risks when using such a distro. I might consider it when Wayland gets better Nvidia support, as this would allow me to try out Hyprland, which is a good-looking tiling window manager that works particularly well on Arch-based distros.
 
-Occasionally I have to work on a windows machine. In such circumstances I would typically set up a Linux virtual machine using VirtualBox. If you do go down this route, then it is recommended to install the "VirtualBox Guest Additions", which is a set of device drivers and system applications that optimize the virtual machine for better performance and usability. You can install these by mounting the Guest Additions CD image (from the VirtualBox "Devices" menu) while your virtual machine is running, then running the installer from the mounted CD. This enables important features like shared clipboard, drag-and-drop file sharing, better video performance, and automatic display resizing.
+### MacOS
+MacOS provides a stable unix based environment with up-to-date software via the Homebrew package manager. The only downside is that it is less customisable and as far as I am aware has limited tilling window management software.
+
+### Windows
+Occasionally I have to work on a windows machine. In such circumstances I would typically set up a Linux virtual machine using VirtualBox for the sake of development. If you do go down this route, then it is recommended to install the "VirtualBox Guest Additions", which is a set of device drivers and system applications that optimize the virtual machine for better performance and usability. You can install these by mounting the Guest Additions CD image (from the VirtualBox "Devices" menu) while your virtual machine is running, then running the installer from the mounted CD. This enables important features like shared clipboard, drag-and-drop file sharing, better video performance, and automatic display resizing.
 
 ```
 sudo cvt 3840 2160
