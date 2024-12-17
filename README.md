@@ -107,6 +107,7 @@ If you have already stowed this repo into your home directory then you will have
 * neofetch - retrieves system information.
 * tree - visualisation of a directory.
 * fzf - fuzzy finding (build from source recommended)
+* htop - A useful utility to see processes and resource consumption.
 
 ### Text Editor - Neovim (LazyVim) (build from source recommended)
 
