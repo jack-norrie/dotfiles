@@ -13,7 +13,7 @@ sudo apt-get install ninja-build gettext cmake unzip curl build-essential
 
 Conversely, the macOS package manager Homebrew typically has relatively up-to-date software, and as such, the above should not be necessary. Furthermore, there exist more bleeding-edge Linux distributions like Arch-based distros which have more up-to-date packages. However, building a handful of packages from source is not laborious enough for me to take on the increased instability risks when using such a distro. I might consider it when Wayland gets better Nvidia support, as this would allow me to try out Hyprland, which is a good-looking tiling window manager that works particularly well on Arch-based distros.
 
-Finally, it is occasionally the case that I have to work on a windows machine. In such circumstances I would typically recommended setting up a Linux virtual machine using VirtualBox. If you do go down this route, then it is recommended to navigate to the virtual box UI while in your virtual machine and mount the "VirtualBox Guest Additions". This will allows your virtual machine to more seamlessly interface with the host OS. However, even with these "additions" installed, I have historically had issues using 4k displays when running such virtual machines. A common fix is to increase the virtual machine's VRAM to the max, and to use the following command to get a display profile for your desired resolution, for example:
+Occasionally the case that I have to work on a windows machine. In such circumstances I would typically set up a Linux virtual machine using VirtualBox. If you do go down this route, then it is recommended to navigate to the virtual box UI while in your virtual machine and mount the "VirtualBox Guest Additions". This will allows your virtual machine to more seamlessly interface with the host OS. However, even with these "additions" installed, I have historically had issues using 4k displays when running such virtual machines. A common fix is to increase the virtual machine's VRAM to the max, and to use the following command to get a display profile for your desired resolution, for example:
 ```
 sudo cvt 3840 2160
 ```
@@ -23,6 +23,7 @@ This will output a string that defines a resolution profile. Now type, `xrandr` 
 xrandr --newmode "3840x2160_60.00" 712.75 3840 4160 4576 5312 2160 2163 2168 2237 -hsync +vsync
 xrandr --addmode Virtual1 "3840x2160_60.00"
 ```
+Finally, virtual box uses the right control key as the `HOST` key by default, which is used in combination with other keys to perform VM shortcuts. I would recommend rebinding this, given that right control is a modifer key that is used by many programs within your virtual machine. 
 
 ## System Settings
 
