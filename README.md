@@ -5,9 +5,11 @@
 The purpose of this repository is to serve as a record of my development environment, i.e., programs I use for development alongside their configurations. This will allow me to move between various machines while maintaining a relatively consistent workflow. The main piece of software which makes this possible is GNU Stow, which allows me to symlink the dotfiles in this repository to their corresponding counterparts in my home directory.
 
 ## Operating System
+
 I mainly program machine learning applications, and as such, I need an operating system and development environment with good support for Nvidia GPUs. Furthermore, I make use of a lot of FOSS and therefore prefer a UNIX-based OS. Nonetheless, I am not always in full control of the operating system I am using, so below are some tips for the 3 main types of operating system.
 
 ### Linux
+
 My go-to Linux OS is Pop!_OS due to its out-of-the-box Nvidia driver support. However, this being an Ubuntu-based distro means the package-managed software is often out of date. For this reason, it is highly recommended to install the following packages so that you can build some packages from source:
 
 ```
@@ -17,21 +19,26 @@ sudo apt-get install ninja-build gettext cmake unzip curl build-essential
 I am aware that there exist more bleeding-edge Linux distributions like Arch-based distros which have more up-to-date packages. However, building a handful of packages from source is not laborious enough for me to take on the increased instability risks when using such a distro. I might consider it when Wayland gets better Nvidia support, as this would allow me to try out Hyprland, which is a good-looking tiling window manager that works particularly well on Arch-based distros.
 
 ### MacOS
+
 MacOS provides a stable unix based environment with up-to-date software via the Homebrew package manager. The only downside is that it is less customisable and as far as I am aware has limited tilling window management software.
 
 ### Windows
+
 Occasionally I have to work on a windows machine. In such circumstances I would typically set up a Linux virtual machine using VirtualBox for the sake of development. If you do go down this route, then it is recommended to install the "VirtualBox Guest Additions", which is a set of device drivers and system applications that optimize the virtual machine for better performance and usability. You can install these by mounting the Guest Additions CD image (from the VirtualBox "Devices" menu) while your virtual machine is running, then running the installer from the mounted CD. This enables important features like shared clipboard, drag-and-drop file sharing, better video performance, and automatic display resizing.
 
 ```
 sudo cvt 3840 2160
 ```
+
 This will output a string that defines a resolution profile. Now type, `xrandr` to find the name of your display, likely something like `Virtual1`. Then simply create a file `.xprofile` in your home directory and add this display profile for your display of choice. For example:
+
 ```
 #!/bin/sh
 xrandr --newmode "3840x2160_60.00" 712.75 3840 4160 4576 5312 2160 2163 2168 2237 -hsync +vsync
 xrandr --addmode Virtual1 "3840x2160_60.00"
 ```
-Finally, virtual box uses the right control key as the `HOST` key by default, which is used in combination with other keys to perform VM shortcuts. I would recommend rebinding this, given that right control is a modifer key that is used by many programs within your virtual machine. 
+
+Finally, virtual box uses the right control key as the `HOST` key by default, which is used in combination with other keys to perform VM shortcuts. I would recommend rebinding this, given that right control is a modifer key that is used by many programs within your virtual machine.
 
 ## System Settings
 
@@ -52,7 +59,9 @@ sudo cp ~/.config/monitors.xml ~gdm/.config/
 ```
 
 ### Work Space Shortcuts
+
 I like to set shortcuts to move between my various workspaces. This functionality becomes redundant when using a tiling window manager, however sometimes you end up in a more vanilla desktop environment, and it can be useful to have this functionality. Use the following command on a Linux OS to add `<Control> + x` shortcuts to move to workspace `x`.
+
 ```
 for i in {1..9}; do gsettings set "org.gnome.desktop.wm.keybindings" "switch-to-workspace-$i" "['<Control>$i']" ; done
 ```
@@ -94,9 +103,9 @@ With Git installed you will be able to clone this repository into your home dire
 
 Another piece of software that I like to use is lazygit. This is a higher level wrapper that sits on top of git. It provides a really nice interface which has good integration with neovim.
 
-### Terminal Emulator - WezTerm
+### Terminal Emulator - Ghostty
 
-I use WezTerm as my terminal emulator. It uses true color and by default comes with a nerd-font installed and used by default (JetBrains Mono), meaning that it can immediately benefit from terminal cosmetic upgrades. Furthermore, it has good compatibility across different operating systems and is configured with Lua, meaning it is easily extendable.
+I have moved to Ghostty from WezTerm. I made this change due to the significant performance improvements for Ghostty on MacOS. Both are great options, and if you exclusively use Linux then WezTerm may have the upper hand in terms of extendability using lua. Meanwhile, Ghostty takes a different philosophy, preferring limited configurations and instead opting for sensible defaults.
 
 ### Shell - Zsh
 
@@ -158,9 +167,11 @@ Then type `trust` followed by `5`.
 Despite WezTerm having a built-in terminal multiplexer, I use tmux since this has a rich plugin ecosystem and is a standard tool. However, in order to take advantage of the plugin ecosystem, you will need to first install the tmux plugin manager (TPM) from GitHub. Then you will have to source the `.tmux.conf` file that should be in your home directory. Finally, you should enter tmux and enter `prefix+I` to install the plugins using TPM.
 
 ### Tiling Window Manager
+
 [Placeholder]
 
 ### Browser
+
 I have moved away from Chromium based browsers due to manifest v3, my browser of choice is Firefox.
 
 ## Further-Work
