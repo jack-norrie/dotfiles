@@ -101,11 +101,11 @@ Git is one of the first things you should install, given that it is a dependency
 
 With Git installed you will be able to clone this repository into your home directory and follow the steps in the software config section to stow your config files in your home directory.
 
-Another piece of software that I like to use is lazygit. This is a higher level wrapper that sits on top of git. It provides a really nice interface which has good integration with neovim.
+Another piece of software that I like to use is [lazygit](https://github.com/jesseduffield/lazygit), which is git TUI that has nice integrations with my NeoVim config.
 
 ### Terminal Emulator - Ghostty
 
-I have moved to Ghostty from WezTerm. I made this change due to the significant performance improvements for Ghostty on MacOS. Both are great options, and if you exclusively use Linux then WezTerm may have the upper hand in terms of extendability using lua. Meanwhile, Ghostty takes a different philosophy, preferring limited configurations and instead opting for sensible defaults.
+I have moved to [Ghostty](https://ghostty.org/) from WezTerm. I made this change due to the significant performance improvements for Ghostty on MacOS. Both are great options, and if you exclusively use Linux then WezTerm may have the upper hand in terms of extendability using lua. Meanwhile, Ghostty takes a different philosophy, preferring limited configurations and instead opting for sensible defaults.
 
 ### Shell - Zsh
 
@@ -130,7 +130,7 @@ If you have already stowed this repo into your home directory then you will have
 
 ### Text Editor - Neovim (LazyVim) (build from source recommended)
 
-My choice of text editor is Neovim. I currently use the LazyVim distribution, rather than configuring the whole thing from scratch. Fortunately, if you have been following along so far, you will have all the prerequisites to run this distro, i.e., a true color terminal and nerd font. Don't worry about going to the LazyVim site, the config file contained in this repository points to this distro and all the relevant files will be downloaded. All that remains to be done is to install neovim, which can either be done via a package manager or by building neovim from source. I would recommend the later, since package manager's neovim version is often out of date relative to the dependencies required for many of the Neovim plugins I use. With an install of neovim, the LazyVim package manager should then handle the rest in terms of installing plugins. However, it should be noted that some plugins will require `npm` as a dependency.
+My choice of text editor is [Neovim](https://neovim.io/). I currently use the LazyVim distribution, rather than configuring the whole thing from scratch. Fortunately, if you have been following along so far, you will have all the prerequisites to run this distro, i.e., a true color terminal and nerd font. Don't worry about going to the LazyVim site, the config file contained in this repository points to this distro and all the relevant files will be downloaded. All that remains to be done is to install neovim, which can either be done via a package manager or by building neovim from source. I would recommend the later, since package manager's neovim version is often out of date relative to the dependencies required for many of the Neovim plugins I use. With an install of neovim, the LazyVim package manager should then handle the rest in terms of installing plugins. However, it should be noted that some plugins will require `npm` as a dependency.
 
 ### Password Manager
 
@@ -164,7 +164,7 @@ Then type `trust` followed by `5`.
 
 ### Terminal Multiplexer - TMUX
 
-Despite WezTerm having a built-in terminal multiplexer, I use tmux since this has a rich plugin ecosystem and is a standard tool. However, in order to take advantage of the plugin ecosystem, you will need to first install the tmux plugin manager (TPM) from GitHub. Then you will have to source the `.tmux.conf` file that should be in your home directory. Finally, you should enter tmux and enter `prefix+I` to install the plugins using TPM.
+Despite WezTerm having a built-in terminal multiplexer, I use [tmux](https://github.com/tmux/tmux/wiki/Installing) since this has a rich plugin ecosystem and is a standard tool. However, in order to take advantage of the plugin ecosystem, you will need to first install the tmux plugin manager (TPM) from GitHub. Then you will have to source the `.tmux.conf` file that should be in your home directory. Finally, you should enter tmux and enter `prefix+I` to install the plugins using TPM.
 
 ### Tiling Window Manager
 
