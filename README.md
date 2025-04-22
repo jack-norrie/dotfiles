@@ -164,15 +164,15 @@ Then type `trust` followed by `5`.
 
 ### Terminal Multiplexer - TMUX
 
-Despite WezTerm having a built-in terminal multiplexer, I use [tmux](https://github.com/tmux/tmux/wiki/Installing) since this has a rich plugin ecosystem and is a standard tool. However, in order to take advantage of the plugin ecosystem, you will need to first install the tmux plugin manager (TPM) from GitHub. Then you will have to source the `.tmux.conf` file that should be in your home directory. Finally, you should enter tmux and enter `prefix+I` to install the plugins using TPM.
+Despite WezTerm having a built-in terminal multiplexer, I use [tmux](https://github.com/tmux/tmux/wiki/Installing) since this has a rich plugin ecosystem and is a standard tool. However, in order to take advantage of the plugin ecosystem, you will need to first install the tmux plugin manager [(TPM)](https://github.com/tmux-plugins/tpm) from GitHub. Then you will have to source the `.tmux.conf` file that should be in your home directory. Finally, you should enter tmux and enter `prefix+I` to install the plugins using TPM.
 
 ### Tiling Window Manager
 
-[Placeholder]
+Due to my cross platform development environment I have been hesitant to invest learning a tiling window manager. So far I have found it relatively seamless moving between Linux and MacOS by mapping workspaces/desktops to `ctrl+<num>` keyboard shortcuts. Although this being said, I have heard that [i3](https://i3wm.org/) for Linux and [AeroSpace](https://github.com/nikitabobko/AeroSpace) for MacOS can be configured in a compatible fashion - Maybe I will look into this later.
 
 ### Browser
 
-I have moved away from Chromium based browsers due to manifest v3, my browser of choice is Firefox.
+My browser of choice is Firefox.
 
 ## Further-Work
 
