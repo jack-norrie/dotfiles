@@ -49,7 +49,7 @@ return {
       require("avante").setup()
 
       -- Retrieve the API key and set it directly in Lua
-      local handle = io.popen("pass show llm/anthropic")
+      local handle = io.popen("pass show dev/llm/anthropic")
       if handle then
         local api_key = handle:read("*a")
         handle:close()
