@@ -83,6 +83,8 @@ alias c='clear'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)" 
 
+# Default editor for shell
+export EDITOR=vim
 
 # Created by `pipx` on 2025-01-21 18:54:24
 export PATH="$PATH:/Users/jacknorrie/.local/bin"
