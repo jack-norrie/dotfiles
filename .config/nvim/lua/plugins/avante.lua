@@ -67,18 +67,27 @@ return {
           },
         },
       })
-      --
-      -- Retrieve the API key and set it directly in Lua
+
+      -- Attempt to retrieve anthropic API key
       local handle = io.popen("pass show dev/llm/anthropic")
       if handle then
         local api_key = handle:read("*a")
         handle:close()
-        -- Trim any whitespace
         api_key = api_key:gsub("^%s*(.-)%s*$", "%1")
-        -- Set the environment variable within Neovim
         vim.env.ANTHROPIC_API_KEY = api_key
       else
         print("Failed to retrieve Anthropic API key")
+      end
+
+      -- Attempt to retrieve OpenAI API key
+      local handle = io.popen("pass show dev/llm/chatgpt")
+      if handle then
+        local api_key = handle:read("*a")
+        handle:close()
+        api_key = api_key:gsub("^%s*(.-)%s*$", "%1")
+        vim.env.OPENAI_API_KEY = api_key
+      else
+        print("Failed to retrieve OpenAI API key")
       end
     end,
   },
