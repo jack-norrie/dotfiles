@@ -24,6 +24,8 @@ MacOS provides a stable unix based environment with up-to-date software via the 
 
 ### Windows
 
+### VirtualBox
+
 Occasionally I have to work on a windows machine. In such circumstances I would typically set up a Linux virtual machine using VirtualBox for the sake of development. If you do go down this route, then it is recommended to install the "VirtualBox Guest Additions", which is a set of device drivers and system applications that optimize the virtual machine for better performance and usability. You can install these by mounting the Guest Additions CD image (from the VirtualBox "Devices" menu) while your virtual machine is running, then running the installer from the mounted CD. This enables important features like shared clipboard, drag-and-drop file sharing, better video performance, and automatic display resizing.
 
 ```
@@ -39,6 +41,10 @@ xrandr --addmode Virtual1 "3840x2160_60.00"
 ```
 
 Finally, virtual box uses the right control key as the `HOST` key by default, which is used in combination with other keys to perform VM shortcuts. I would recommend rebinding this, given that right control is a modifer key that is used by many programs within your virtual machine.
+
+### Windows Subsystem for Linux
+
+If using a traditional virtual machine feels a bit too heavy, then WSL provides an alternative option. It offers a compatibility layer that allows you to run a lightweight Linux environment directly within Windows, enabling seamless use of Linux tools and applications on your Windows machine.
 
 ## System Settings
 
@@ -130,7 +136,7 @@ If you have already stowed this repo into your home directory then you will have
 
 ### Text Editor - Neovim (LazyVim) (build from source recommended)
 
-My choice of text editor is [Neovim](https://neovim.io/). I currently use the LazyVim distribution, rather than configuring the whole thing from scratch. Fortunately, if you have been following along so far, you will have all the prerequisites to run this distro, i.e., a true color terminal and nerd font. Don't worry about going to the LazyVim site, the config file contained in this repository points to this distro and all the relevant files will be downloaded. All that remains to be done is to install neovim, which can either be done via a package manager or by building neovim from source. I would recommend the later, since package manager's neovim version is often out of date relative to the dependencies required for many of the Neovim plugins I use. With an install of neovim, the LazyVim package manager should then handle the rest in terms of installing plugins. However, it should be noted that some plugins will require `npm` as a dependency.
+My choice of text editor is [Neovim](https://neovim.io/). I currently use the LazyVim distribution, rather than configuring the whole thing from scratch. Fortunately, if you have been following along so far, you will have all the prerequisites to run this distro, i.e., a true color terminal and nerd font. Don't worry about going to the LazyVim site, the config file contained in this repository points to this distro and all the relevant files will be downloaded. All that remains to be done is to install neovim, which can either be done via a package manager or by building neovim from source. I would recommend the latter, since package manager's neovim version is often out of date relative to the dependencies required for many of the Neovim plugins I use. With an install of neovim, the LazyVim package manager should then handle the rest in terms of installing plugins. However, it should be noted that some plugins will require `npm` as a dependency.
 
 ### Password Manager
 
