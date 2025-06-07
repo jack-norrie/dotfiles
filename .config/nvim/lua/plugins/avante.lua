@@ -53,10 +53,22 @@ return {
     config = function()
       require("avante").setup({
         mode = "legacy",
+        provider = "gemini",
         providers = {
           claude = {
             endpoint = "https://api.anthropic.com",
             model = "claude-sonnet-4-20250514",
+            timeout = 30000, -- Timeout in milliseconds
+            disable_tools = true,
+            disabled_tools = { "python", "run_python", "bash", "git_commit" },
+            extra_request_body = {
+              temperature = 0,
+              max_tokens = 4096,
+            },
+          },
+          gemini = {
+            endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
+            model = "gemini-2.5-flash-preview-05-20",
             timeout = 30000, -- Timeout in milliseconds
             disable_tools = true,
             disabled_tools = { "python", "run_python", "bash", "git_commit" },
@@ -88,6 +100,28 @@ return {
         vim.env.OPENAI_API_KEY = api_key
       else
         print("Failed to retrieve OpenAI API key")
+      end
+
+      -- Attempt to retrieve Google API key
+      local handle = io.popen("pass show dev/llm/gemini")
+      if handle then
+        local api_key = handle:read("*a")
+        handle:close()
+        api_key = api_key:gsub("^%s*(.-)%s*$", "%1")
+        vim.env.GEMINI_API_KEY = api_key
+      else
+        print("Failed to retrieve Gemini API key")
+      end
+
+      -- Atempt to retrieve Tavily API key
+      local handle = io.popen("pass show dev/search/tavily")
+      if handle then
+        local api_key = handle:read("*a")
+        handle:close()
+        api_key = api_key:gsub("^%s*(.-)%s*$", "%1")
+        vim.env.TAVILY_API_KEY = api_key
+      else
+        print("Failed to retrieve Tavily API key")
       end
     end,
   },
