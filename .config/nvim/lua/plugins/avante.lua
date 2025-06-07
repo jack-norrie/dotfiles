@@ -44,19 +44,30 @@ return {
         ft = { "markdown", "Avante" },
       },
     },
+
+    -- By default config is passed require("avante").setup(*opts)
+    -- We leave opts blank above and explicitly define opts below
+    -- This allows us to add custom key retrieval logic after the
+    -- plugin setup has been run, this is not possible with simple
+    -- opts.
     config = function()
-      -- Your existing configuration (if any) goes here
       require("avante").setup({
-        claude = {
-          endpoint = "https://api.anthropic.com",
-          model = "claude-3-5-sonnet-20241022",
-          timeout = 30000, -- Timeout in milliseconds
-          temperature = 0,
-          max_tokens = 4096,
-          disable_tools = true, -- disable tools!
+        mode = "legacy",
+        disable_tools = true,
+        disabled_tools = { "python", "run_python", "bash", "git_commit" },
+        providers = {
+          claude = {
+            endpoint = "https://api.anthropic.com",
+            model = "claude-sonnet-4-20250514",
+            timeout = 30000, -- Timeout in milliseconds
+            extra_request_body = {
+              temperature = 0,
+              max_tokens = 4096,
+            },
+          },
         },
       })
-
+      --
       -- Retrieve the API key and set it directly in Lua
       local handle = io.popen("pass show dev/llm/anthropic")
       if handle then
