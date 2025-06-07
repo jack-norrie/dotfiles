@@ -81,7 +81,6 @@ alias c='clear'
 
 # Shell integrations
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(fzf --zsh)" 
 
 # Default editor for shell
 export EDITOR=vim
