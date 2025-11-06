@@ -9,7 +9,9 @@ The purpose of this repository is to serve as a record of my development environ
 I primarily program machine learning applications, therefore my operating system of choice needs to have good support for the modern machine learning ecosystem. Additionally, I also make use of a lot of FOSS and as such I prefer a UNIX based operating system. Furthermore, I enjoy tinkering with computers and experimenting with GPU accelerated training on local hardware. Therefore, with no other constraints, my go to operating system would be a Linux based OS. However, professionally I use MacOS, and I have found the mental overhead of switching between the different shortcuts associated with these different OSs to be cumbersome. As such, I have virtualised my local workstation using Proxmox and I ssh into virtual machines hosted on this workstation from my Mac when I want to use my GPU. This mirrors how I would use my Mac in a professional setting in combination with a cloud provider, and as such I have found this to be the lowest friction solution.
 
 > [!NOTE]
-> I have also experimented with windows subsystem for linux (WSL) and if forced to use Windows, I would use WSL.
+> I have also experimented with Windows Subsystem for Linux (WSL). This worked well and I would certainly use this if forced to use Windows.
+
+and if forced to use WindowsI would use WSL.
 
 ## System Settings
 
