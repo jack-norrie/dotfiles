@@ -4,7 +4,7 @@
 
 The purpose of this repository is to serve as a record of my development environment, i.e., programs I use for development alongside their configurations. This will allow me to move between various machines while maintaining a relatively consistent workflow. The main piece of software which makes this possible is GNU Stow, which allows me to symlink the dotfiles in this repository to their corresponding counterparts in my home directory.
 
-## Operating System
+## Operating System - MacOS
 
 I primarily program machine learning applications, therefore my operating system of choice needs to have good support for the modern machine learning ecosystem. Additionally, I also make use of a lot of FOSS and as such I prefer a UNIX based operating system. Furthermore, I enjoy tinkering with computers and experimenting with GPU accelerated training on local hardware. Therefore, with no other constraints, my go to operating system would be a Linux based OS. However, professionally I use MacOS, and I have found the mental overhead of switching between the different shortcuts associated with these different OSs to be cumbersome. As such, I have virtualised my local workstation using Proxmox and I ssh into virtual machines hosted on this workstation from my Mac when I want to use my GPU. This mirrors how I would use my Mac in a professional setting in combination with a cloud provider, and as such I have found this to be the lowest friction solution.
 
@@ -87,36 +87,6 @@ If you have already stowed this repo into your home directory then you will have
 ### Text Editor - Neovim (LazyVim) (build from source recommended)
 
 My choice of text editor is [Neovim](https://neovim.io/). I currently use the LazyVim distribution, rather than configuring the whole thing from scratch. Fortunately, if you have been following along so far, you will have all the prerequisites to run this distro, i.e., a true color terminal and nerd font. Don't worry about going to the LazyVim site, the config file contained in this repository points to this distro and all the relevant files will be downloaded. All that remains to be done is to install neovim, which can either be done via a package manager or by building neovim from source. I would recommend the latter, since package manager's neovim version is often out of date relative to the dependencies required for many of the Neovim plugins I use. With an install of neovim, the LazyVim package manager should then handle the rest in terms of installing plugins. However, it should be noted that some plugins will require `npm` as a dependency.
-
-### Password Manager
-
-I use [pass](https://www.passwordstore.org/) for password management. This uses `gpg` encrypted files to store passwords. You will need to make sure this is properly configured if you want to use neovim coding assistant plugins, since my neovim setup gets its API keys via `pass`.
-
-```
-sudo apt-get install pass
-```
-
-Although the encrypted passwords are stored in this repo the private key is not, for obvious reasons. This will have to be manually transferred from a machine that has this key. This can be done by exporting the public and private keys held by `gpg`:
-
-```
-gpg --output public.pgp --armor --export jacknorrie6785@gmail.com
-gpg --output private.pgp --armor --export-secret-key jacknorrie6785@gmail.com
-```
-
-this will output the files `public.pgp` and `private.pgp` into your current working directory. You can now transfer these over to your new machine and use the following command to load them into that machine's `gpg`.
-
-```
-gpg --import private.pgp
-gpg --import public.pgp
-```
-
-Finally, to encrypt new passwords on the new machine you will have to increase the machine's trust level for the key.
-
-```
-gpg --edit-key jacknorrie6785@gmail.com
-```
-
-Then type `trust` followed by `5`.
 
 ### Terminal Multiplexer - TMUX
 
