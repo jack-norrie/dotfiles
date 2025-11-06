@@ -6,45 +6,10 @@ The purpose of this repository is to serve as a record of my development environ
 
 ## Operating System
 
-I mainly program machine learning applications, and as such, I need an operating system and development environment with good support for Nvidia GPUs. Furthermore, I make use of a lot of FOSS and therefore prefer a UNIX-based OS. Nonetheless, I am not always in full control of the operating system I am using, so below are some tips for the 3 main types of operating system.
+I primarily program machine learning applications, therefore my operating system of choice needs to have good support for the modern machine learning ecosystem. Additionally, I also make use of a lot of FOSS and as such I prefer a UNIX based operating system. Furthermore, I enjoy tinkering with computers and experimenting with GPU accelerated training on local hardware. Therefore, with no other constraints, my go to operating system would be a Linux based OS. However, professionally I use MacOS, and I have found the mental overhead of switching between the different shortcuts associated with these different OSs to be cumbersome. As such, I have virtualised my local workstation using Proxmox and I ssh into virtual machines hosted on this workstation from my Mac when I want to use my GPU. This mirrors how I would use my Mac in a professional setting in combination with a cloud provider, and as such I have found this to be the lowest friction solution.
 
-### Linux
-
-My go-to Linux OS is Pop!_OS due to its out-of-the-box Nvidia driver support. However, this being an Ubuntu-based distro means the package-managed software is often out of date. For this reason, it is highly recommended to install the following packages so that you can build some packages from source:
-
-```
-sudo apt-get install ninja-build gettext cmake unzip curl build-essential
-```
-
-I am aware that there exist more bleeding-edge Linux distributions like Arch-based distros which have more up-to-date packages. However, building a handful of packages from source is not laborious enough for me to take on the increased instability risks when using such a distro. I might consider it when Wayland gets better Nvidia support, as this would allow me to try out Hyprland, which is a good-looking tiling window manager that works particularly well on Arch-based distros.
-
-### MacOS
-
-MacOS provides a stable unix based environment with up-to-date software via the Homebrew package manager. The only downside is that it is less customisable and as far as I am aware has limited tilling window management software.
-
-### Windows
-
-### VirtualBox
-
-Occasionally I have to work on a windows machine. In such circumstances I would typically set up a Linux virtual machine using VirtualBox for the sake of development. If you do go down this route, then it is recommended to install the "VirtualBox Guest Additions", which is a set of device drivers and system applications that optimize the virtual machine for better performance and usability. You can install these by mounting the Guest Additions CD image (from the VirtualBox "Devices" menu) while your virtual machine is running, then running the installer from the mounted CD. This enables important features like shared clipboard, drag-and-drop file sharing, better video performance, and automatic display resizing.
-
-```
-sudo cvt 3840 2160
-```
-
-This will output a string that defines a resolution profile. Now type, `xrandr` to find the name of your display, likely something like `Virtual1`. Then simply create a file `.xprofile` in your home directory and add this display profile for your display of choice. For example:
-
-```
-#!/bin/sh
-xrandr --newmode "3840x2160_60.00" 712.75 3840 4160 4576 5312 2160 2163 2168 2237 -hsync +vsync
-xrandr --addmode Virtual1 "3840x2160_60.00"
-```
-
-Finally, virtual box uses the right control key as the `HOST` key by default, which is used in combination with other keys to perform VM shortcuts. I would recommend rebinding this, given that right control is a modifer key that is used by many programs within your virtual machine.
-
-### Windows Subsystem for Linux
-
-If using a traditional virtual machine feels a bit too heavy, then WSL provides an alternative option. It offers a compatibility layer that allows you to run a lightweight Linux environment directly within Windows, enabling seamless use of Linux tools and applications on your Windows machine.
+> [!NOTE]
+> I have also experimented with windows subsystem for linux (WSL) and if forced to use Windows, I would use WSL.
 
 ## System Settings
 
@@ -54,7 +19,7 @@ For the purpose of programming, having the hash symbol # be displaced by the pou
 
 ### CAPS-LOCK to ESCAPE
 
-When using proper typing technique, the CAPS-LOCK key is a redundant key, which is a shame since by default it takes a position on the keyboard which is very accessible, i.e., close to the home row. For this reason, I rebind it to a more useful and frequently used key. For me, escape is the best candidate for this remapping, since this is a key I frequently use when performing Vim motions. This can easily be done with gnome-tweaks on Linux and in the system settings on macOS.
+When using proper typing technique, the CAPS-LOCK key is a redundant key. this is a shame since by default it takes a position on the keyboard which is very accessible, i.e., close to the home row. For this reason, I rebind it to a more useful and frequently used key. For me, escape is the best candidate for this remapping, since this is a key I frequently use when performing Vim motions. This can easily be done in the system settings on macOS.
 
 ### Single-Display
 
@@ -128,12 +93,12 @@ If you have already stowed this repo into your home directory then you will have
 
 ### Basic Terminal Utilities
 
-* neofetch - retrieves system information.
-* tree - visualisation of a directory.
-* fzf - fuzzy finding (build from source recommended)
-* htop - A useful utility to see processes and resource consumption.
-* ripgrep - Used be the lazyvim search and replace tool.
-* tldr - An example driven version of the man pages for common usages of unix tools.
+- neofetch - retrieves system information.
+- tree - visualisation of a directory.
+- fzf - fuzzy finding (build from source recommended)
+- htop - A useful utility to see processes and resource consumption.
+- ripgrep - Used be the lazyvim search and replace tool.
+- tldr - An example driven version of the man pages for common usages of unix tools.
 
 ### Text Editor - Neovim (LazyVim) (build from source recommended)
 
