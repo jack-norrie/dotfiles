@@ -88,6 +88,14 @@ If you have already stowed this repo into your home directory then you will have
 
 My choice of text editor is [Neovim](https://neovim.io/). I currently use the LazyVim distribution, rather than configuring the whole thing from scratch. Fortunately, if you have been following along so far, you will have all the prerequisites to run this distro, i.e., a true color terminal and nerd font. Don't worry about going to the LazyVim site, the config file contained in this repository points to this distro and all the relevant files will be downloaded. All that remains to be done is to install neovim, which can either be done via a package manager or by building neovim from source. I would recommend the latter, since package manager's neovim version is often out of date relative to the dependencies required for many of the Neovim plugins I use. With an install of neovim, the LazyVim package manager should then handle the rest in terms of installing plugins. However, it should be noted that some plugins will require `npm` as a dependency.
 
+### AI Coding Assistant
+
+I use [OpenCode](https://opencode.ai/) as an AI coding assistant. This is a provider agnostic TUI based coding assistant. This integrates well with my terminal based setup, and one of my favorite features is that you can use `!` and enter a command into the chat box, which will then use this in the model's context. Another one of my favorite features is that it lets you use `<TAB>` to switch between `PLAN` and `BUILD` mode, where the former cannot make code changes and is for discussion. I have found the best way to use these agentic models is to first agree on a well thought out plan before giving the model the ability to change your code.
+
+I primarily use this model with a Claude Pro subscription. However, if I get rate limited on this I will switch to Gemini flash, which allows 250 free requests per day. This is another feature I like about OpenCode. You can quickly switch between different models using `/models`.
+
+Finally, I make use of the [windsurf](https://windsurf.com/) neovim extension for inline tab completions.
+
 ### Terminal Multiplexer - TMUX
 
 Despite WezTerm having a built-in terminal multiplexer, I use [tmux](https://github.com/tmux/tmux/wiki/Installing) since this has a rich plugin ecosystem and is a standard tool. However, in order to take advantage of the plugin ecosystem, you will need to first install the tmux plugin manager [(TPM)](https://github.com/tmux-plugins/tpm) from GitHub. Then you will have to source the `.tmux.conf` file that should be in your home directory. Finally, you should enter tmux and enter `prefix+I` to install the plugins using TPM.
