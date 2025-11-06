@@ -21,22 +21,6 @@ For the purpose of programming, having the hash symbol # be displaced by the pou
 
 When using proper typing technique, the CAPS-LOCK key is a redundant key. this is a shame since by default it takes a position on the keyboard which is very accessible, i.e., close to the home row. For this reason, I rebind it to a more useful and frequently used key. For me, escape is the best candidate for this remapping, since this is a key I frequently use when performing Vim motions. This can easily be done in the system settings on macOS.
 
-### Single-Display
-
-When using a laptop, I often plug it into a monitor and use this monitor as a single display. You can easily set this up in the desktop settings. However, in Linux, the log-in screen is a different piece of software from the desktop. You need to copy these settings over to the sign-in manager.
-
-```
-sudo cp ~/.config/monitors.xml ~gdm/.config/
-```
-
-### Work Space Shortcuts
-
-I like to set shortcuts to move between my various workspaces. This functionality becomes redundant when using a tiling window manager, however sometimes you end up in a more vanilla desktop environment, and it can be useful to have this functionality. Use the following command on a Linux OS to add `<Control> + x` shortcuts to move to workspace `x`.
-
-```
-for i in {1..9}; do gsettings set "org.gnome.desktop.wm.keybindings" "switch-to-workspace-$i" "['<Control>$i']" ; done
-```
-
 ## Software Configuration
 
 ### Using GNU Stow to Setup Symlinks
