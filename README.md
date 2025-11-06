@@ -94,7 +94,15 @@ Despite WezTerm having a built-in terminal multiplexer, I use [tmux](https://git
 
 ### Tiling Window Manager
 
-Due to my cross platform development environment I have been hesitant to invest learning a tiling window manager. So far I have found it relatively seamless moving between Linux and MacOS by mapping workspaces/desktops to `ctrl+<num>` keyboard shortcuts. Although this being said, I have heard that [i3](https://i3wm.org/) for Linux and [AeroSpace](https://github.com/nikitabobko/AeroSpace) for MacOS can be configured in a compatible fashion - Maybe I will look into this later.
+I have designed my workflow around a large single monitor display in combination with a tilling window manager. I believe this is optimal since it allows me to focus on one thing at a time and I do not have to commit mental overhead to organising and finding my windows, I simply press a key combination and I will be brought to the application of my choosing in full screen. I personally arrange my workspaces as follows:
+
+1. Files
+2. Terminal
+3. Web: Firefox + Postman (Accordion)
+4. Communication: outlook + teams (Accordion)
+5. Obsidian (note taking)
+
+Unfortunately, the options for tilling window managers on MacOS are limited. This is one of my biggest pain points with using this operating systems. Nonetheless, I have found [aerospace](https://github.com/nikitabobko/AeroSpace) to be an acceptable option, even if it is a little buggy at times. It uses i3 like shortcuts, so if you are familiar with this Linux tilling window manager then you will be feel right at home.
 
 ### Browser
 
@@ -102,4 +110,4 @@ My browser of choice is Firefox.
 
 ## Further-Work
 
-At some point, I would like to experiment with NixOS (for Linux) and nix-darwin (for macOS); this would automate the system settings and software versioning portion of this development environment setup.
+At some point, I would like to experiment with NixOS (for Linux) and nix-darwin (for macOS); this would automate the system settings and software setup/versioning portion of this development environment setup.
