@@ -4,14 +4,12 @@
 
 The purpose of this repository is to serve as a record of my development environment, i.e., programs I use for development alongside their configurations. This will allow me to move between various machines while maintaining a relatively consistent workflow. The main piece of software which makes this possible is GNU Stow, which allows me to symlink the dotfiles in this repository to their corresponding counterparts in my home directory.
 
-## Operating System - MacOS
+## Operating System - macOS
 
-I primarily program machine learning applications, therefore my operating system of choice needs to have good support for the modern machine learning ecosystem. Additionally, I also make use of a lot of FOSS and as such I prefer a UNIX based operating system. Furthermore, I enjoy tinkering with computers and experimenting with GPU accelerated training on local hardware. Therefore, with no other constraints, my go to operating system would be a Linux based OS. However, professionally I use MacOS, and I have found the mental overhead of switching between the different shortcuts associated with these different OSs to be cumbersome. As such, I have virtualised my local workstation using Proxmox and I ssh into virtual machines hosted on this workstation from my Mac when I want to use my GPU. This mirrors how I would use my Mac in a professional setting in combination with a cloud provider, and as such I have found this to be the lowest friction solution.
+I primarily program machine learning applications, therefore my operating system of choice needs to have good support for the modern machine learning ecosystem. Additionally, I also make use of a lot of FOSS and as such I prefer a UNIX based operating system. Furthermore, I enjoy tinkering with computers and experimenting with GPU accelerated training on local hardware. Therefore, with no other constraints, my go to operating system would be a Linux based OS. However, professionally I use macOS, and I have found the mental overhead of switching between the different shortcuts associated with these different OSs to be cumbersome. As such, I have virtualised my local workstation using Proxmox and I ssh into virtual machines hosted on this workstation from my Mac when I want to use my GPU. This mirrors how I would use my Mac in a professional setting in combination with a cloud provider, and as such I have found this to be the lowest friction solution.
 
 > [!NOTE]
 > I have also experimented with Windows Subsystem for Linux (WSL). This worked well and I would certainly use this if forced to use Windows.
-
-and if forced to use WindowsI would use WSL.
 
 ## System Settings
 
@@ -21,7 +19,7 @@ For the purpose of programming, having the hash symbol # be displaced by the pou
 
 ### CAPS-LOCK to ESCAPE
 
-When using proper typing technique, the CAPS-LOCK key is a redundant key. this is a shame since by default it takes a position on the keyboard which is very accessible, i.e., close to the home row. For this reason, I rebind it to a more useful and frequently used key. For me, escape is the best candidate for this remapping, since this is a key I frequently use when performing Vim motions. This can easily be done in the system settings on macOS.
+When using proper typing technique, the CAPS-LOCK key is a redundant key. This is a shame since by default it takes a position on the keyboard which is very accessible, i.e., close to the home row. For this reason, I rebind it to a more useful and frequently used key. For me, escape is the best candidate for this remapping, since this is a key I frequently use when performing Vim motions. This can easily be done in the system settings on macOS.
 
 ## Software Configuration
 
@@ -50,7 +48,7 @@ The adopt flag will overwrite any existing files that might already exist in you
 
 ## Software
 
-The following software are roughly listed in the order in which they should be installed.
+The following software are roughly listed in the order in which they should be installed. On macOS most of these pieces of software are available via the [brew](https://brew.sh/) package manager.
 
 ### Version Control - Git
 
@@ -62,37 +60,28 @@ Another piece of software that I like to use is [lazygit](https://github.com/jes
 
 ### Terminal Emulator - Ghostty
 
-I have moved to [Ghostty](https://ghostty.org/) from WezTerm. I made this change due to the significant performance improvements for Ghostty on MacOS. Both are great options, and if you exclusively use Linux then WezTerm may have the upper hand in terms of extendability using lua. Meanwhile, Ghostty takes a different philosophy, preferring limited configurations and instead opting for sensible defaults.
+I have moved to [Ghostty](https://ghostty.org/) from WezTerm. I made this change due to the significant performance improvements for Ghostty on macOS. Both are great options, and if you exclusively use Linux then WezTerm may have the upper hand in terms of extendability using lua. Meanwhile, Ghostty takes a different philosophy, preferring limited configurations and instead opting for sensible defaults.
 
 ### Shell - Zsh
 
-This environment is setup with a `zsh` shell in mind. You can check if this is your default shell using `echo $SHELL`. If this is not the default shell of your operating system use the following commands:
-
-```
-sudo apt install zsh
-chsh -s $(which zsh)
-```
-
-Then restart your system. After which, if you do not already have a `zshrc` dotfile in your home directory, you will be prompted to configure one.
-
-If you have already stowed this repo into your home directory then you will have a `.zshrc` config file in your home directory. Your zsh shell should now be using a powerlevel10k configured prompt.
+This environment is setup with a `zsh` shell in mind, which is the default shell on macOS. If you have already stowed this repo into your home directory then you will have a `.zshrc` config file in your home directory. Your zsh shell should now be using a powerlevel10k configured prompt.
 
 ### Basic Terminal Utilities
 
 - neofetch - retrieves system information.
 - tree - visualisation of a directory.
-- fzf - fuzzy finding (build from source recommended)
+- fzf - fuzzy finding
 - htop - A useful utility to see processes and resource consumption.
-- ripgrep - Used be the lazyvim search and replace tool.
+- ripgrep - Used by the lazyvim search and replace tool.
 - tldr - An example driven version of the man pages for common usages of unix tools.
 
-### Text Editor - Neovim (LazyVim) (build from source recommended)
+### Text Editor - Neovim (LazyVim)
 
-My choice of text editor is [Neovim](https://neovim.io/). I currently use the LazyVim distribution, rather than configuring the whole thing from scratch. Fortunately, if you have been following along so far, you will have all the prerequisites to run this distro, i.e., a true color terminal and nerd font. Don't worry about going to the LazyVim site, the config file contained in this repository points to this distro and all the relevant files will be downloaded. All that remains to be done is to install neovim, which can either be done via a package manager or by building neovim from source. I would recommend the latter, since package manager's neovim version is often out of date relative to the dependencies required for many of the Neovim plugins I use. With an install of neovim, the LazyVim package manager should then handle the rest in terms of installing plugins. However, it should be noted that some plugins will require `npm` as a dependency.
+My choice of text editor is [Neovim](https://neovim.io/). I currently use the LazyVim distribution, rather than configuring the whole thing from scratch. Fortunately, if you have been following along so far, you will have all the prerequisites to run this distro, i.e., a true color terminal and nerd font. Don't worry about going to the LazyVim site, the config file contained in this repository points to this distro and all the relevant files will be downloaded. All that remains to be done is to install neovim via a package manager. With an install of neovim, the LazyVim package manager should then handle the rest in terms of installing plugins. However, it should be noted that some plugins will require `npm` as a dependency.
 
 ### AI Coding Assistant
 
-I use [OpenCode](https://opencode.ai/) as an AI coding assistant. This is a provider agnostic TUI based coding assistant. This integrates well with my terminal based setup, and one of my favorite features is that you can use `!` and enter a command into the chat box, which will then use this in the model's context. Another one of my favorite features is that it lets you use `<TAB>` to switch between `PLAN` and `BUILD` mode, where the former cannot make code changes and is for discussion. I have found the best way to use these agentic models is to first agree on a well thought out plan before giving the model the ability to change your code.
+I use [OpenCode](https://opencode.ai/) as an AI coding assistant. This is a provider agnostic TUI based coding assistant. It integrates well with my terminal based setup, and one of my favorite features is that you can use `!` and enter a command into the chat box, which will then use this in the model's context. Another one of my favorite features is that it lets you use `<TAB>` to switch between `PLAN` and `BUILD` mode, where the former cannot make code changes and is for discussion. I have found the best way to use these agentic models is to first agree on a well thought out plan before giving the model the ability to change your code.
 
 I primarily use this model with a Claude Pro subscription. However, if I get rate limited on this I will switch to Gemini flash, which allows 250 free requests per day. This is another feature I like about OpenCode. You can quickly switch between different models using `/models`.
 
@@ -104,7 +93,7 @@ Despite WezTerm having a built-in terminal multiplexer, I use [tmux](https://git
 
 ### Tiling Window Manager
 
-I have designed my workflow around a large single monitor display in combination with a tilling window manager. I believe this is optimal since it allows me to focus on one thing at a time and I do not have to commit mental overhead to organising and finding my windows, I simply press a key combination and I will be brought to the application of my choosing in full screen. I personally arrange my workspaces as follows:
+I have designed my workflow around a large single monitor display in combination with a tiling window manager. I believe this is optimal since it allows me to focus on one thing at a time and I do not have to commit mental overhead to organising and finding my windows, I simply press a key combination and I will be brought to the application of my choosing in full screen. I personally arrange my workspaces as follows:
 
 1. Files
 2. Terminal
@@ -112,7 +101,7 @@ I have designed my workflow around a large single monitor display in combination
 4. Communication: outlook + teams (Accordion)
 5. Obsidian (note taking)
 
-Unfortunately, the options for tilling window managers on MacOS are limited. This is one of my biggest pain points with using this operating systems. Nonetheless, I have found [aerospace](https://github.com/nikitabobko/AeroSpace) to be an acceptable option, even if it is a little buggy at times. It uses i3 like shortcuts, so if you are familiar with this Linux tilling window manager then you will be feel right at home.
+Unfortunately, the options for tiling window managers on macOS are limited. This is one of my biggest pain points with using this operating system. Nonetheless, I have found [aerospace](https://github.com/nikitabobko/AeroSpace) to be an acceptable option, even if it is a little buggy at times. It uses i3 like shortcuts, so if you are familiar with this Linux tiling window manager then you will feel right at home.
 
 ### Browser
 
