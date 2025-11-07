@@ -56,7 +56,7 @@ Git is one of the first things you should install, given that it is a dependency
 
 With Git installed you will be able to clone this repository into your home directory and follow the steps in the software config section to stow your config files in your home directory.
 
-Another piece of software that I like to use is [lazygit](https://github.com/jesseduffield/lazygit), which is git TUI that has nice integrations with my NeoVim config.
+Another piece of software that I like to use is [lazygit](https://github.com/jesseduffield/lazygit), which is git TUI that has nice integrations with my Neovim config.
 
 ### Terminal Emulator - Ghostty
 
@@ -77,15 +77,15 @@ This environment is setup with a `zsh` shell in mind, which is the default shell
 
 ### Text Editor - Neovim (LazyVim)
 
-My choice of text editor is [Neovim](https://neovim.io/). I currently use the LazyVim distribution, rather than configuring the whole thing from scratch. Fortunately, if you have been following along so far, you will have all the prerequisites to run this distro, i.e., a true color terminal and nerd font. Don't worry about going to the LazyVim site, the config file contained in this repository points to this distro and all the relevant files will be downloaded. All that remains to be done is to install neovim via a package manager. With an install of neovim, the LazyVim package manager should then handle the rest in terms of installing plugins. However, it should be noted that some plugins will require `npm` as a dependency.
+My choice of text editor is [Neovim](https://neovim.io/). I currently use the LazyVim distribution, rather than configuring the whole thing from scratch. Fortunately, if you have been following along so far, you will have all the prerequisites to run this distro, i.e., a true color terminal and nerd font. Don't worry about going to the LazyVim site, the config file contained in this repository points to this distro and all the relevant files will be downloaded. All that remains to be done is to install Neovim via a package manager. With an install of Neovim, the LazyVim package manager should then handle the rest in terms of installing plugins. However, it should be noted that some plugins will require `npm` as a dependency.
 
 ### AI Coding Assistant
 
 I use [OpenCode](https://opencode.ai/) as an AI coding assistant. This is a provider agnostic TUI based coding assistant. It integrates well with my terminal based setup, and one of my favorite features is that you can use `!` and enter a command into the chat box, which will then use this in the model's context. Another one of my favorite features is that it lets you use `<TAB>` to switch between `PLAN` and `BUILD` mode, where the former cannot make code changes and is for discussion. I have found the best way to use these agentic models is to first agree on a well thought out plan before giving the model the ability to change your code.
 
-I primarily use this model with a Claude Pro subscription. However, if I get rate limited on this I will switch to Gemini flash, which allows 250 free requests per day. This is another feature I like about OpenCode. You can quickly switch between different models using `/models`.
+I primarily use the latest Claude Sonnet model via the Claude Pro subscription. However, if I get rate limited on this I will switch to Google Gemini Flash, which allows 250 free requests per day. This is another feature I like about OpenCode. You can quickly switch between different models using `/models`.
 
-Finally, I make use of the [windsurf](https://windsurf.com/) neovim extension for inline tab completions.
+Finally, I make use of the [windsurf](https://windsurf.com/) Neovim extension for inline tab completions.
 
 ### Terminal Multiplexer - TMUX
 
@@ -93,7 +93,7 @@ Despite WezTerm having a built-in terminal multiplexer, I use [tmux](https://git
 
 When using tmux I make use of sessions, usually one per project. This allows me to easily switch between projects with `ctrl+s`. I will usually set the windows up in my sessions as follows:
 
-1. NeoVim
+1. Neovim
 2. Terminal
 3. OpenCode
 
@@ -101,11 +101,11 @@ When using tmux I make use of sessions, usually one per project. This allows me 
 
 I have designed my workflow around a large single monitor display in combination with a tiling window manager. I believe this is optimal since it allows me to focus on one thing at a time and I do not have to commit mental overhead to organising and finding my windows, I simply press a key combination and I will be brought to the application of my choosing in full screen. I personally arrange my workspaces as follows:
 
-1. Files
-2. Terminal
+1. Files: Finder
+2. Code: Ghostty
 3. Web: Firefox + Postman (Accordion)
 4. Communication: Outlook + Teams / Proton Mail + Discord (Accordion)
-5. Learning: Obsidian + Anki (Accordion)
+5. Notes/Learning: Obsidian + Anki (Accordion)
 
 Unfortunately, the options for tiling window managers on macOS are limited. This is one of my biggest pain points with using this operating system. Nonetheless, I have found [aerospace](https://github.com/nikitabobko/AeroSpace) to be an acceptable option, even if it is a little buggy at times. It uses i3 like shortcuts, so if you are familiar with this Linux tiling window manager then you will feel right at home.
 
