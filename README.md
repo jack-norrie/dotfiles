@@ -98,8 +98,8 @@ I have designed my workflow around a large single monitor display in combination
 1. Files
 2. Terminal
 3. Web: Firefox + Postman (Accordion)
-4. Communication: outlook + teams (Accordion)
-5. Obsidian (note taking)
+4. Communication: Outlook + Teams / Proton Mail + Discord (Accordion)
+5. Learning: Obsidian + Anki (Accordion)
 
 Unfortunately, the options for tiling window managers on macOS are limited. This is one of my biggest pain points with using this operating system. Nonetheless, I have found [aerospace](https://github.com/nikitabobko/AeroSpace) to be an acceptable option, even if it is a little buggy at times. It uses i3 like shortcuts, so if you are familiar with this Linux tiling window manager then you will feel right at home.
 
