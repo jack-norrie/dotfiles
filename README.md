@@ -91,6 +91,12 @@ Finally, I make use of the [windsurf](https://windsurf.com/) neovim extension fo
 
 Despite WezTerm having a built-in terminal multiplexer, I use [tmux](https://github.com/tmux/tmux/wiki/Installing) since this has a rich plugin ecosystem and is a standard tool. However, in order to take advantage of the plugin ecosystem, you will need to first install the tmux plugin manager [(TPM)](https://github.com/tmux-plugins/tpm) from GitHub. Then you will have to source the `.tmux.conf` file that should be in your home directory. Finally, you should enter tmux and enter `prefix+I` to install the plugins using TPM.
 
+When using tmux I make use of sessions, usually one per project. This allows me to easily switch between projects with `ctrl+s`. I will usually set the windows up in my sessions as follows:
+
+1. NeoVim
+2. Terminal
+3. OpenCode
+
 ### Tiling Window Manager
 
 I have designed my workflow around a large single monitor display in combination with a tiling window manager. I believe this is optimal since it allows me to focus on one thing at a time and I do not have to commit mental overhead to organising and finding my windows, I simply press a key combination and I will be brought to the application of my choosing in full screen. I personally arrange my workspaces as follows:
