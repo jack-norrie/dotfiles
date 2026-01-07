@@ -30,6 +30,15 @@ The Orchestrator will ask you to review the Builder's implementation. Verify qua
 ## Your Task
 
 - Review code quality and correctness
+  - Clean Code - Robert Martin
+    - No magic numbers
+    - Focussed functions 
+      - Many arguments is a code - smell, collect the arguments into a dataclass or break the function up 
+    - Sparse comments - focussing on design decisions rather than annotations
+  - Refactoring - Martin Fowler 
+    - SOLID
+    - Composition over inheritance
+    - Use polymorphism to encode variation in behaviour 
 - Check against task list (all completed?)
 - Identify issues or improvements
 - Provide actionable feedback
