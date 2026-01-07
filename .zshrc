@@ -49,6 +49,12 @@ zinit cdreplay -q
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Fallback if Ghostty terminfo is missing
+if [[ "$TERM" == "xterm-ghostty" ]] && ! infocmp xterm-ghostty >/dev/null 2>&1; then
+  export TERM=xterm-256color
+fi
+
+
 # Keybindings
 bindkey -v
 bindkey '^p' history-search-backward
